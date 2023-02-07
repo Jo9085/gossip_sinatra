@@ -29,10 +29,17 @@ class Gossip
         all_gossips = Gossip.all
         nb = id.to_i
         nb -= 1
-        puts all_gossips[nb].author
-        puts all_gossips[nb].content
         return all_gossips[nb]
+    end
+
+    def self.edit(author, content, id)
+        nb = id.to_i
+        nb -= 1
+        all_gossips = self.all
+        all_gossips[nb].author = author
+        all_gossips[nb].content = content
+        CSV.open('db/gossip.csv', 'w') { |csv| all_gossips.each{|row| csv << [row.author,row.content]}}
+
     end
 end
 
-#binding.pry

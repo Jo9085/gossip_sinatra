@@ -3,11 +3,12 @@
         <title> The Gossip Project </title>
     </head>
     <body>
-        <h1> Mon super site de gossip, testest depuis le dossier views ! </h1>
-        <h2> Tes gossips préférés arrivent bientôt, mais entre temps tu peux <a href="/gossips/new/">créer un gossip ici</a></h2>
+        <h1> Mon super site de gossip, depuis le dossier views ! </h1>
+        <h2> Bienvenue dans ta page de Gossips ! Tu peux en <a href="/gossips/new/">créer un ici</a></h2>
 
         <% gossips.each_with_index do |gossip,index| %>
             <p>
+              <h3> Gossip n° <%= index + 1 %></h3>
               <%= gossip.author %><br/>
               <%= gossip.content %><br/>
               <h3>Et voici <a href="/gossips/<%= index+1 %>">le lien</a> vers ton potin !</h3>
